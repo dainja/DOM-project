@@ -19,6 +19,7 @@ body {
 
 
 .title {
+  color: #1d3557;
   margin: 0.5rem 0;
   font-size: 1.7rem;
   font-weight: 600;
@@ -31,15 +32,25 @@ body {
 .author {
   display: flex;
   justify-content: center;
-  background-color: red;
+  background-color: #98c1d9;
   width: 85%;
   margin: 1.2rem auto;
+  border-radius: 5px;
 }
 
 .customer input,
 .course input,
 .author input {
   flex-basis: 100%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 3px solid #98c1d9;
+  outline: none;
+  border-left: none;
+  background-color: #fff;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .author {
@@ -61,16 +72,75 @@ body {
 }
 
 
-#free-course button {
+.submit-btn {
   display: flex;
-  margin: auto auto 4rem;
+  margin: 0 auto 1.2rem;
   width: 85%;
   height: 2.5rem;
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
   text-transform: uppercase;
+  border: 2px solid #1d3557;
+  border-radius: 5px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  /* color: #98c1d9; */
+  transition: ease-in-out;
+  transition-duration: 0.5s;
+  outline: none;
+  cursor: pointer;
+  background-color: #98c1d9;
+  color: #1d3557;
 }
+
+.disabled {
+  background-color: #fff !important;
+  color: #98c1d9 !important;
+  cursor: unset !important;
+  border: 3px solid #98c1d9 !important;
+  opacity: 0.4;
+
+}
+
+.submit-btn:hover {
+  background-color: #1d3557;
+  color: #fff;
+
+}
+
+
+.clear-btn {
+  display: flex;
+  margin: auto auto 1.2rem;
+  width: 85%;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  /* color: #98c1d9; */
+  transition: ease-in-out;
+  transition-duration: 0.5s;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  color: #e63946;
+}
+
+.clear-btn:hover {
+  background-color: #e63946;
+  color: #fff;
+}
+
+.clear-hide {
+  display: none;
+}
+
 
 .card-container {
   display: flex;
@@ -95,26 +165,36 @@ body {
 .course-card img {
   max-width: 100%;
   height: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .course-card p {
   display: inline-block;
   font-size: 0.75rem;
   width: 3rem;
-  margin: 1.4rem auto 0 1.5rem;
+  margin: 1.1rem auto 0 1.5rem;
   font-weight: bold;
   height: 1rem;
-  /* border-radius: ; */
-  /* !This is where u left off */
+  padding: 5px 3px 0 5px;
+  border-radius: 5px;
+
 }
 
 .course-card .name-title {
-  background-color: #FFC107;
+  background-color: #a8dadc;
+
 }
 
-.course-card .course-title {}
+.course-card .course-title {
+  background-color: #457b9d;
+  color: #fff;
+}
 
-.course-card .author-title {}
+.course-card .author-title {
+  background-color: #1d3557;
+  color: #fff;
+}
 
 .course-card span {
   font-size: 0.9rem;
@@ -130,4 +210,131 @@ body {
   .container {
     width: 1200px;
   }
+}
+
+
+
+
+
+
+.loading {
+  height: 200px;
+  width: 90px;
+  margin: 0 auto;
+  display: none;
+}
+
+.loading-show {
+  display: block;
+  animation-name: fade-in;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.99;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.lds-heart {
+  margin: auto;
+  display: inline-block;
+  position: relative;
+  width: 160px;
+  height: 160px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: #e63946;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 64px;
+  background: #e63946;
+}
+
+.lds-heart div:before {
+  left: -45px;
+  border-radius: 50% 0 0 50%;
+}
+
+.lds-heart div:after {
+  top: -45px;
+  border-radius: 50% 50% 0 0;
+}
+
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+
+  5% {
+    transform: scale(1.1);
+  }
+
+  39% {
+    transform: scale(0.85);
+  }
+
+  45% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+
+.cd-popup {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+
+.cd-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+
+.cd-popup-container {
+  transform: translateY(-40px);
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+
+.is-visible .cd-popup-container {
+  transform: translateY(0);
 }
