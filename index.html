@@ -4,68 +4,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fontawesome icons -->
   <script src="https://kit.fontawesome.com/78122133c9.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/modal.css">
+  <!-- CSS reset -->
   <link rel="stylesheet" href="css/reset.css">
+  <!-- Modal Popup css -->
+  <link rel="stylesheet" href="css/modal.css">
+  <!-- Style CSS -->
   <link rel="stylesheet" href="css/style.css">
   <title>Free course</title>
 </head>
 
 <body>
   <main>
+    <!-- Container -->
     <div class="container">
       <h1 class="title">Get a Free Course</h1>
+      <!-- Form -->
       <div class="form-wrapper">
-
         <form id="free-course">
+          <!-- Form input 1 -->
           <div class="customer">
             <span class="left-icon customer-icon">
               <i class="fas fa-user"></i>
             </span>
             <input type="text" name="" id="customer-name" placeholder="Customer Name...">
-          </div>
+          </div><!-- Form input 1 end -->
+          <!-- Form input 2 -->
           <div class="course">
             <span class="left-icon course-icon">
               <i class="fas fa-book"></i>
             </span>
-
             <input type="text" name="" id="course-name" placeholder="Course...">
-          </div>
+          </div><!-- Form input 2 end -->
+          <!-- Form input 3 -->
           <div class="author">
             <span class="left-icon course-icon">
               <i class="fas fa-user-circle"></i>
             </span>
-
             <input type="text" name="" id="author-name" placeholder="Author...">
-          </div>
+          </div> <!-- Form input 3 end -->
 
           <button type="submit" class="submit-btn disabled">Submit</button>
           <button type="button" class="clear-btn clear-hide">Clear Cache</button>
-        </form>
+        </form> <!-- Form end -->
+
+        <!-- Loading section (hidden) -->
         <div class="loading">
           <div class="lds-heart">
             <div></div>
           </div>
-        </div>
-        <div class="card-container">
+        </div><!-- Loading end -->
 
-        </div>
+        <!-- Card container (code comes from JS) -->
+        <div class="card-container">
+        </div> <!-- Card container end -->
       </div>
-    </div>
+    </div> <!-- Container end-->
   </main>
 
+
+
+  <!-- Popup Modal -->
+  <!--  Asks if user is sure they want to delete cache (localstorage) -->
   <div class="cd-popup" role="alert">
     <div class="cd-popup-container">
-      <p>Are you sure you want to delete this element?</p>
+      <p>Are you sure you want to delete the cache?</p>
       <ul class="cd-buttons">
         <li><a href="#0" class="yes">Yes</a></li>
         <li><a href="#0" class="no">No</a></li>
       </ul>
-      <a href="#0" class="cd-popup-close img-replace">Close</a>
-    </div> <!-- cd-popup-container -->
-  </div> <!-- cd-popup -->
+      <a href="#0" class="cd-popup-close"></a>
+    </div>
+  </div> <!-- Popup Modal end -->
 
-
+  <!-- JS script -->
   <script src="js/app.js"></script>
 </body>
 

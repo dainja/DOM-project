@@ -1,40 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+/* Fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
+/*=========================================================================
+ *                             Stylelint
+ *  Stylelint config that sorts related property declarations
+ *  by grouping together following the order:
+ *
+ *  Positioning
+ *  Box Model
+ *  Typography
+ *  Visual
+ *  Animation
+ *  Misc
+ *========================================================================**/
+
+/*=================================================== *
+ * ==========  General Site Settings       ========== *
+ * ================================================== */
 body {
-  font-family: 'Open Sans', sans-serif;
   background-color: #eee;
 }
 
-.left-icon {
-
-  display: inline-block;
+button,
+body {
+  font-family: "Rubik", sans-serif;
+  letter-spacing: 0.6px;
 }
 
 .container {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   margin: 6.1rem auto;
 }
 
-
-
 .title {
-  color: #1d3557;
   margin: 0.5rem 0;
-  font-size: 1.7rem;
-  font-weight: 600;
-  text-align: center;
   margin-bottom: 1.2rem;
-}
 
+  color: #457b9d;
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-align: center;
+}
+/* =======  End of General site settings  ======= */
+
+/*=================================================== *
+ * ==========  Form, inputs and buttons    ========== *
+ * ================================================== */
 .customer,
 .course,
 .author {
   display: flex;
   justify-content: center;
-  background-color: #98c1d9;
   width: 85%;
   margin: 1.2rem auto;
+
+  background-color: #457b9d;
   border-radius: 5px;
 }
 
@@ -42,15 +63,17 @@ body {
 .course input,
 .author input {
   flex-basis: 100%;
+  padding-left: 1rem;
+
+  color: #333;
+  font-size: 0.9rem;
+
+  background-color: #fff;
+  border: 3px solid #457b9d;
+  border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  border: 3px solid #98c1d9;
   outline: none;
-  border-left: none;
-  background-color: #fff;
-  padding-left: 1rem;
-  font-size: 0.9rem;
-  color: #333;
 }
 
 .author {
@@ -58,182 +81,130 @@ body {
 }
 
 .left-icon {
+  display: inline-block;
+  flex-basis: auto;
   min-width: 2.5rem;
   min-height: 2.5rem;
-  flex-basis: auto;
 }
 
 .left-icon i {
   width: 100%;
   height: 100%;
-  text-align: center;
-  line-height: 2.5rem;
+
   color: #fff;
+  line-height: 2.5rem;
+  text-align: center;
 }
 
-
+/*********  Submit button config  **********/
 .submit-btn {
   display: flex;
-  margin: 0 auto 1.2rem;
+  align-items: center;
+  justify-content: center;
   width: 85%;
   height: 2.5rem;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto 1.2rem;
+
+  color: #fff;
+  font-weight: bolder;
   font-size: 0.8rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
+
+  background-color: #457b9d;
   border: 2px solid #1d3557;
   border-radius: 5px;
-  font-weight: bolder;
-  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
   /* color: #98c1d9; */
   transition: ease-in-out;
   transition-duration: 0.5s;
-  outline: none;
-  cursor: pointer;
-  background-color: #98c1d9;
-  color: #1d3557;
-}
-
-.disabled {
-  background-color: #fff !important;
-  color: #98c1d9 !important;
-  cursor: unset !important;
-  border: 3px solid #98c1d9 !important;
-  opacity: 0.4;
-
 }
 
 .submit-btn:hover {
-  background-color: #1d3557;
   color: #fff;
 
+  background-color: #1d3557;
+}
+/*********  Submit button config end **********/
+
+/*===============================================
+ *                Disabled class
+ *  When all input fields are filled,
+ *  this class will be removed via JS
+ *  and submit button will be active
+ *=============================================**/
+.disabled {
+  color: #457b9d !important;
+
+  background-color: #fff !important;
+  border: 3px solid #457b9d !important;
+  cursor: unset !important;
+  opacity: 0.4;
 }
 
-
+/*===============================================
+ *                Clear Cache button
+ *  Is hidden until user has created a card
+ *  and it's saved in localstorage.
+ *  Then this will be active and displayed
+ *=============================================**/
 .clear-btn {
   display: flex;
-  margin: auto auto 1.2rem;
+  align-items: center;
+  justify-content: center;
   width: 85%;
   height: 2.5rem;
-  justify-content: center;
-  align-items: center;
+  margin: auto auto 1.2rem;
+
+  color: #e63946;
+  font-weight: bolder;
   font-size: 0.8rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
+
+  background-color: #fff;
   border: 2px solid #e63946;
   border-radius: 5px;
-  font-weight: bolder;
-  letter-spacing: 1px;
-  /* color: #98c1d9; */
-  transition: ease-in-out;
-  transition-duration: 0.5s;
   outline: none;
   cursor: pointer;
-  background-color: #fff;
-  color: #e63946;
+
+  transition: ease-in-out;
+  transition-duration: 0.5s;
 }
 
 .clear-btn:hover {
-  background-color: #e63946;
   color: #fff;
+
+  background-color: #e63946;
 }
 
 .clear-hide {
   display: none;
 }
+/* =======  End of Form, inputs and buttons  ======= */
 
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 87%;
-  margin: auto;
-  /* padding-top: 4rem; */
-  justify-content: space-between;
-}
-
-
-
-.course-card {
-  max-width: 19.8rem;
-  height: 23.8rem;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.course-card img {
-  max-width: 100%;
-  height: auto;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.course-card p {
-  display: inline-block;
-  font-size: 0.75rem;
-  width: 3rem;
-  margin: 1.1rem auto 0 1.5rem;
-  font-weight: bold;
-  height: 1rem;
-  padding: 5px 3px 0 5px;
-  border-radius: 5px;
-
-}
-
-.course-card .name-title {
-  background-color: #a8dadc;
-
-}
-
-.course-card .course-title {
-  background-color: #457b9d;
-  color: #fff;
-}
-
-.course-card .author-title {
-  background-color: #1d3557;
-  color: #fff;
-}
-
-.course-card span {
-  font-size: 0.9rem;
-  margin-left: 1.5rem;
-  font-weight: bold;
-}
-
-.course-card:nth-child(n+4) {
-  margin-top: 2rem;
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1200px;
-  }
-}
-
-
-
-
-
-
+/*===============================================
+ *                Loading animation
+ *  A loading animation for when a card is
+ *  submitted. Controlled via JS
+ *=============================================**/
 .loading {
-  height: 200px;
-  width: 90px;
-  margin: 0 auto;
   display: none;
+  width: 90px;
+  height: 120px;
+  margin: 0 auto;
 }
 
 .loading-show {
   display: block;
+
   animation-name: fade-in;
   animation-duration: 2.5s;
   animation-timing-function: ease-in-out;
-  animation-direction: alternate;
   animation-iteration-count: 2;
-
+  animation-direction: alternate;
 }
-
 
 @keyframes fade-in {
   0% {
@@ -249,44 +220,53 @@ body {
   }
 }
 
-
 .lds-heart {
-  margin: auto;
-  display: inline-block;
   position: relative;
+
+  display: inline-block;
   width: 160px;
-  height: 160px;
+  height: 120px;
+  margin: auto;
+
   transform: rotate(45deg);
   transform-origin: 40px 40px;
 }
 
 .lds-heart div {
+  position: absolute;
   top: 32px;
   left: 32px;
-  position: absolute;
+
   width: 64px;
   height: 64px;
+
   background: #e63946;
+
   animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .lds-heart div:after,
 .lds-heart div:before {
-  content: " ";
   position: absolute;
+
   display: block;
   width: 64px;
   height: 64px;
+
   background: #e63946;
+
+  content: "";
 }
 
 .lds-heart div:before {
   left: -45px;
+
   border-radius: 50% 0 0 50%;
 }
 
 .lds-heart div:after {
   top: -45px;
+
   border-radius: 50% 50% 0 0;
 }
 
@@ -315,26 +295,144 @@ body {
     transform: scale(0.9);
   }
 }
+/*=============== END OF Loading animation ==============*/
 
-
-.cd-popup {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+/*=================================================== *
+ * ==========  Card container and cards  ========== *
+ * ================================================== */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding-top: 4rem; */
+  justify-content: space-between;
+  width: 87%;
+  margin: auto;
 }
 
-.cd-popup.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s 0s, visibility 0s 0s;
+.course-card {
+  max-width: 19.8rem;
+  height: 23.8rem;
+  margin: 0 auto;
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.cd-popup-container {
-  transform: translateY(-40px);
-  transition-property: transform;
-  transition-duration: 0.3s;
+.course-card img {
+  max-width: 100%;
+  height: auto;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-.is-visible .cd-popup-container {
-  transform: translateY(0);
+.course-card p {
+  display: inline-block;
+  width: 3rem;
+  height: 1rem;
+  margin: 1.1rem auto 0 1.5rem;
+  padding: 5px 3px 0 5px;
+
+  font-weight: bold;
+  font-size: 0.75rem;
+
+  border-radius: 5px;
 }
+
+.course-card .name-title {
+  background-color: #a8dadc;
+}
+
+.course-card .course-title {
+  color: #fff;
+
+  background-color: #457b9d;
+}
+
+.course-card .author-title {
+  color: #fff;
+
+  background-color: #1d3557;
+}
+
+.course-card span {
+  margin-left: 1rem;
+
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.course-card:nth-child(n + 1) {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/*===============================================
+ *                Media Queries
+ *  Sizes that will change depending on window
+ *  width.
+ *  Mostly card size and margins changed
+ *
+ *=============================================**/
+@media (max-width: 768px) {
+  .container {
+    min-width: 300px;
+    max-width: 768px;
+  }
+
+  .course-card {
+    max-width: 420px;
+    height: auto;
+    padding-bottom: 1.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+
+  .course-card {
+    max-width: 19.8rem;
+    height: 23.8rem;
+  }
+
+  .course-card:nth-child(n + 3) {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 992px;
+  }
+
+  .course-card {
+    max-width: 16rem;
+    height: 21rem;
+  }
+
+  .course-card:nth-child(n + 4) {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+
+  .course-card {
+    max-width: 19.8rem;
+    height: 23.8rem;
+  }
+
+  .course-card:nth-child(n + 4) {
+    margin-top: 2rem;
+  }
+}
+/*********  End of Media queries  **********/
+
+/* =======  End of Card container and cards  ======= */
